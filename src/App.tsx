@@ -105,23 +105,23 @@ function App() {
   };
 
   const TimeBlock = ({ value, label }: { value: number; label: string }) => (
-    <div className="flex flex-col items-center bg-white/10 rounded-lg p-3 w-20">
-      <span className="text-2xl font-bold text-black">{value.toString().padStart(2, '0')}</span>
-      <span className="text-xs text-black/60">{label}</span>
+    <div className="flex flex-col items-center bg-white/10 rounded-lg p-1.5 min-w-[3.5rem]">
+      <span className="text-lg font-bold text-black leading-none">{value.toString().padStart(2, '0')}</span>
+      <span className="text-xs text-black/70 break-words text-center">{label}</span>
     </div>
-  );
+  );   
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#00CF31]/10 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#00CF31] to-[#00CF31]">
       {/* Floating CTA */}
       <div 
-        className={`fixed bottom-8 right-8 transform transition-all duration-500 ${
+        className={`fixed bottom-8 z-40 right-8 transform transition-all duration-500 ${
           showFloatingCTA ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}
       >
         <button
           onClick={handleEnterClick}
-          className="group bg-[#00CF31] text-white px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105 flex items-center gap-3"
+          className="group bg-[#00CF31] border-4 border-white text-white px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105 flex items-center gap-3"
         >
           <Trophy size={24} className="animate-pulse" />
           <span className="font-semibold">Enter Now</span>
@@ -130,7 +130,7 @@ function App() {
       </div>
 
       {/* Notification */}
-      <div className={`fixed top-4 right-4 transition-all duration-500 transform ${showNotification ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed z-40 top-4 right-4 transition-all duration-500 transform ${showNotification ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="bg-white rounded-lg shadow-lg p-4 flex items-center gap-3">
           <Bell className="text-[#00CF31]" />
           <p className="text-sm">New entry received!</p>
@@ -139,13 +139,13 @@ function App() {
 
       {/* Floating Elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 left-10 w-16 h-16 text-[#00CF31]/20 animate-[float_6s_ease-in-out_infinite]">
+        <div className="absolute top-20 left-10 w-16 h-16 text-[#1f2937]/20 animate-[float_6s_ease-in-out_infinite]">
           <Gift size={64} />
         </div>
-        <div className="absolute top-40 right-20 w-12 h-12 text-[#00CF31]/20 animate-[float_8s_ease-in-out_infinite]">
+        <div className="absolute top-40 right-20 w-12 h-12 text-[#1f2937]/20 animate-[float_8s_ease-in-out_infinite]">
           <Star size={48} />
         </div>
-        <div className="absolute bottom-20 left-20 w-12 h-12 text-[#00CF31]/20 animate-[float_7s_ease-in-out_infinite]">
+        <div className="absolute bottom-20 left-20 w-12 h-12 text-[#1f2937]/20 animate-[float_7s_ease-in-out_infinite]">
           <DollarSign size={48} />
         </div>
       </div>
@@ -181,12 +181,12 @@ function App() {
         <div className="text-center mb-16 relative">
           <div className="inline-block mb-6 relative">
             <div className="absolute inset-0 animate-ping">
-              <Trophy size={64} className="text-[#00CF31]/30" />
+              <Trophy size={64} className="text-[#fff]/30" />
             </div>
-            <Trophy size={64} className="text-[#00CF31] relative z-10" />
+            <Trophy size={64} className="text-[#fff] relative z-10" />
           </div>
           <h1 className="text-7xl font-bold mb-6 text-gray-800">
-            Win <span className="text-[#00CF31]">$500</span> Cash Prize!
+            Win <span className="text-[#fff]">$500</span> Cash Prize!
           </h1>
           <p className="text-xl text-gray-600 mb-12">Enter now for your chance to win big!</p>
 
@@ -206,33 +206,36 @@ function App() {
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
-            <div className="md:w-1/2">
-              <img
-                src="/uploads/mockup.png"
-                alt="Mobile Mockup"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <div className="md:w-1/2 relative">
+  <img
+    src="/uploads/mockup.png"
+    alt="Mobile Mockup"
+    className="w-full h-full object-cover z-40" // Original image
+  />
+             <span className="text-4xl text-green-500 font-bold absolute top-0 left-0 animate-ping duration-700 pointer-events-none">$</span>
+             <span className="text-3xl text-green-500 font-bold absolute top-40 left-9 animate-ping duration-700 pointer-events-none">$</span>
+             <span className="text-3xl text-green-500 font-bold absolute top-20 right-10 animate-ping duration-700 pointer-events-none">$</span>
+          </div>
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto mb-12">
-            <div className="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-all">
-              <DollarSign size={32} className="text-[#00CF31] mx-auto mb-3" />
-              <h3 className="text-2xl font-bold">$500</h3>
-              <p className="text-gray-600">Cash Prize</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-all">
-              <Users size={32} className="text-[#00CF31] mx-auto mb-3" />
-              <h3 className="text-2xl font-bold">8,427+</h3>
-              <p className="text-gray-600">Total Entries</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-all">
-              <Trophy size={32} className="text-[#00CF31] mx-auto mb-3" />
-              <h3 className="text-2xl font-bold">100%</h3>
-              <p className="text-gray-600">Winner Rate</p>
-            </div>
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto mb-12">
+  <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 transform hover:scale-105 transition-all">
+    <DollarSign size={32} className="text-[#00CF31] mx-auto mb-2 sm:mb-3" />
+    <h3 className="text-xl sm:text-2xl font-bold text-center">$500</h3>
+    <p className="text-gray-600 text-center text-sm sm:text-base">Cash Prize</p>
+  </div>
+  <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 transform hover:scale-105 transition-all">
+    <Users size={32} className="text-[#00CF31] mx-auto mb-2 sm:mb-3" />
+    <h3 className="text-xl sm:text-2xl font-bold text-center">8,427+</h3>
+    <p className="text-gray-600 text-center text-sm sm:text-base">Total Entries</p>
+  </div>
+  <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 transform hover:scale-105 transition-all">
+    <Trophy size={32} className="text-[#00CF31] mx-auto mb-2 sm:mb-3" />
+    <h3 className="text-xl sm:text-2xl font-bold text-center">100%</h3>
+    <p className="text-gray-600 text-center text-sm sm:text-base">Winner Rate</p>
+  </div>
+</div>
 
           {/* Prize Tiers Carousel */}
           <div className="mt-8">
@@ -243,7 +246,7 @@ function App() {
                   onClick={() => setSelectedPrizeTier(index)}
                   className={`px-4 py-2 rounded-full transition-all ${
                     selectedPrizeTier === index
-                      ? 'bg-[#00CF31] text-white'
+                      ? 'bg-[#00CF31] text-white border-2 border-white'
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 >
@@ -469,11 +472,11 @@ function App() {
         {/* Recent Entries */}
         <div className="mt-16">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-              <Sparkles className="text-[#00CF31]" />
+            <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+              <Sparkles className="text-[#fff]" />
               Recent Entries
             </h2>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-sm text-white">
               <Clock size={16} />
               <span>Updates every few seconds</span>
             </div>
