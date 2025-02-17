@@ -186,9 +186,9 @@ function App() {
             <Trophy size={64} className="text-[#fff] relative z-10" />
           </div>
           <h1 className="text-7xl font-bold mb-6 text-gray-800">
-            Win <span className="text-[#fff]">$500</span> Cash Prize!
+             <span className="text-[#fff]">Win $500 Cash Prize!</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-12">Enter now for your chance to win big!</p>
+          <p className="text-xl text-white mb-12">Enter now for your chance to win big!</p>
 
           {/* Image-Based Hero Section with CTA */}
           <div className="rounded-2xl overflow-hidden flex md:flex-row flex-col max-w-5xl mx-auto mb-12">
@@ -201,9 +201,9 @@ function App() {
                 onClick={handleEnterClick}
                 className="inline-flex items-center gap-2 bg-[#fff] text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-[#fff]/90 transition-all transform hover:scale-105 group"
               >
-                <Sparkles size={20} />
-                <span>Enter Sweepstakes Now</span>
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                <Sparkles size={20} className='text-[#00CF31]'/>
+                <span className='text-[#00CF31]'>Enter Sweepstakes Now</span>
+                <ArrowRight className="group-hover:translate-x-1 transition-transform text-[#00CF31]" />
               </button>
             </div>
             <div className="md:w-1/2 relative">

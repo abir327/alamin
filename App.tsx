@@ -112,7 +112,7 @@ function App() {
   );   
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#00CF31] to-[#00CF31]">
+    <div className="min-h-screen bg-gradient-to-b from-[#00D64F] to-[#00D64F]">
       {/* Floating CTA */}
       <div 
         className={`fixed bottom-8 z-40 right-8 transform transition-all duration-500 ${
@@ -186,24 +186,24 @@ function App() {
             <Trophy size={64} className="text-[#fff] relative z-10" />
           </div>
           <h1 className="text-7xl font-bold mb-6 text-gray-800">
-            Win <span className="text-[#fff]">$500</span> Cash Prize!
+             <span className="text-[#fff]">Win $500 Cash Prize!</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-12">Enter now for your chance to win big!</p>
+          <p className="text-xl text-white mb-12">Enter now for your chance to win big!</p>
 
           {/* Image-Based Hero Section with CTA */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex md:flex-row flex-col max-w-5xl mx-auto mb-12">
+          <div className="rounded-2xl overflow-hidden flex md:flex-row flex-col max-w-5xl mx-auto mb-12">
             <div className="md:w-1/2 p-8 text-left">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Claim Your $500 Reward</h2>
-              <p className="text-gray-600 mb-6">
+              <h2 className="text-3xl font-bold text-white mb-4">Claim Your $500 Reward</h2>
+              <p className="text-white mb-6">
                 Join thousands of others and enter our exclusive sweepstakes for a chance to win $500 cash!
               </p>
               <button
                 onClick={handleEnterClick}
-                className="inline-flex items-center gap-2 bg-[#00CF31] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#00CF31]/90 transition-all transform hover:scale-105 group"
+                className="inline-flex items-center gap-2 bg-[#fff] text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-[#fff]/90 transition-all transform hover:scale-105 group"
               >
-                <Sparkles size={20} />
-                <span>Enter Sweepstakes Now</span>
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                <Sparkles size={20} className='text-[#00CF31]'/>
+                <span className='text-[#00CF31]'>Enter Sweepstakes Now</span>
+                <ArrowRight className="group-hover:translate-x-1 transition-transform text-[#00CF31]" />
               </button>
             </div>
             <div className="md:w-1/2 relative">
@@ -212,26 +212,26 @@ function App() {
     alt="Mobile Mockup"
     className="w-full h-full object-cover z-40" // Original image
   />
-             <span className="text-4xl text-green-500 font-bold absolute top-0 left-0 animate-ping duration-700 pointer-events-none">$</span>
-             <span className="text-3xl text-green-500 font-bold absolute top-40 left-9 animate-ping duration-700 pointer-events-none">$</span>
-             <span className="text-3xl text-green-500 font-bold absolute top-20 right-10 animate-ping duration-700 pointer-events-none">$</span>
+             <span className="text-4xl text-white font-bold absolute top-0 left-0 animate-ping duration-700 pointer-events-none">5$</span>
+             <span className="text-3xl text-white font-bold absolute top-40 left-9 animate-ping duration-700 pointer-events-none">15$</span>
+             <span className="text-3xl text-white font-bold absolute top-20 right-10 animate-ping duration-700 pointer-events-none">7$</span>
           </div>
           </div>
 
           {/* Quick Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto mb-12">
-  <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 transform hover:scale-105 transition-all">
-    <DollarSign size={32} className="text-[#00CF31] mx-auto mb-2 sm:mb-3" />
+  <div className="border-2 border-white rounded-xl shadow-lg p-4 sm:p-6 transform hover:scale-105 transition-all">
+    <DollarSign size={32} className="text-[#fff] mx-auto mb-2 sm:mb-3" />
     <h3 className="text-xl sm:text-2xl font-bold text-center">$500</h3>
     <p className="text-gray-600 text-center text-sm sm:text-base">Cash Prize</p>
   </div>
-  <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 transform hover:scale-105 transition-all">
-    <Users size={32} className="text-[#00CF31] mx-auto mb-2 sm:mb-3" />
+  <div className="border-2 border-white rounded-xl shadow-lg p-4 sm:p-6 transform hover:scale-105 transition-all">
+    <Users size={32} className="text-[#fff] mx-auto mb-2 sm:mb-3" />
     <h3 className="text-xl sm:text-2xl font-bold text-center">8,427+</h3>
     <p className="text-gray-600 text-center text-sm sm:text-base">Total Entries</p>
   </div>
-  <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 transform hover:scale-105 transition-all">
-    <Trophy size={32} className="text-[#00CF31] mx-auto mb-2 sm:mb-3" />
+  <div className="border-2 border-white rounded-xl shadow-lg p-4 sm:p-6 transform hover:scale-105 transition-all">
+    <Trophy size={32} className="text-[#fff] mx-auto mb-2 sm:mb-3" />
     <h3 className="text-xl sm:text-2xl font-bold text-center">100%</h3>
     <p className="text-gray-600 text-center text-sm sm:text-base">Winner Rate</p>
   </div>
