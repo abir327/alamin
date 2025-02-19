@@ -101,7 +101,7 @@ function App() {
   }, []);
 
   const handleEnterClick = () => {
-    window.open('https://smrturl.co/a/s8bc4ef91ea/3706?s1=Detailtrend');
+    window.open();
   };
 
   const TimeBlock = ({ value, label }: { value: number; label: string }) => (
